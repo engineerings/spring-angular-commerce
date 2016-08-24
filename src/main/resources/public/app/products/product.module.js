@@ -1,7 +1,9 @@
 (function () {
-    "use strict";
+
+    'use strict';
 
     angular
-        .module("productManagement",
-            ["ngResource"]);
+        .module('productManagement',
+            ['ngResource']);
+
 }());

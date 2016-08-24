@@ -1,19 +1,20 @@
 (function () {
-     "use strict";
 
-    angular.
-        module("productManagement")
-        .controller("ProductListCtrl",
-                    ["productResource",
-                        ProductListCtrl]);
+'use strict';
 
-    function ProductListCtrl(productResource) {
-        var vm = this;
+angular.
+    module('productManagement')
+    .controller('ProductListCtrl',
+                ['productResource',
+                    ProductListCtrl]);
 
-        productResource.query(function (data) {
-            vm.products = data;
-        });
+function ProductListCtrl(productResource) {
+    var vm = this;
 
-    }
+    productResource.query(function (data) {
+        vm.products = data;
+    });
+
+}
 
 }());

@@ -1,0 +1,2 @@
+'gulp check --verbose ' => show all proceeded files
+'gulp check'  => lunch main task
