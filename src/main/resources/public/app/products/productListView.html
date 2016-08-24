@@ -1,0 +1,38 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">
+                Products
+            </h1>
+            <h3 class="text-center">
+                Product List
+            </h3>
+        </div>
+
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th class="numeric">Price</th>
+                    <th>%-Category-%</th>
+                    <th class="numeric">Weight</th>
+                    <th>Image</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="product in vm.products">
+                    <td data-title="Code">{{ product.name }}</td>
+                    <td data-title="Company">{{ product.description }}</td>
+                    <td data-title="Price" class="numeric">{{ product.price }}</td>
+                    <td data-title="Code">{{ product.category }}</td>
+                    <td data-title="Code">{{ product.weight }}</td>
+                    <td data-title="Code">{{ product.image }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
