@@ -52,18 +52,18 @@ public class ProductStub {
 
     public static Product create(Product product) {
         idIndex += idIndex;
-        product.setId(idIndex);
+        product.setProductId(idIndex);
         products.put(idIndex, product);
         return product;
     }
 
-    public static Product get(Long id) { return products.get(id);}
+    public static Product get(Long productId) { return products.get(productId);}
 
-    public static Product update(Long id, Product product) {
-        products.put(id, product);
+    public static Product update(Long productId, Product product) {
+        products.put(productId, product);
         return product;
     }
 
-    public static Product delete(Long id) { return products.remove(id); }
+    public static Product delete(Long productId) { return products.remove(productId); }
 
 }

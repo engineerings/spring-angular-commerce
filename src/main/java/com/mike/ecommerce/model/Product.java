@@ -10,7 +10,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long productId;
     private String name;
     private String description;
     private Double price;
@@ -25,8 +25,8 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String name, String description, Double price, Date date, Integer category, Double weight, String image, String identity, String metaTitle, String metaDescription) {
-        this.id = id;
+    public Product(Long productId, String name, String description, Double price, Date date, Integer category, Double weight, String image, String identity, String metaTitle, String metaDescription) {
+        this.productId = productId;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -39,12 +39,12 @@ public class Product {
         this.metaDescription = metaDescription;
     }
 
-    public Long getId() {
-        return id;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public String getName() {

@@ -20,19 +20,19 @@ public class ProductController {
         return ProductStub.create(product);
     }
 
-    @RequestMapping(value = "products/{id}", method = RequestMethod.GET)
-    public Product get(@PathVariable Long id) {
-        return ProductStub.get(id);
+    @RequestMapping(value = "products/{productId}", method = RequestMethod.GET)
+    public Product get(@PathVariable Long productId) {
+        return ProductStub.get(productId);
     }
 
-    @RequestMapping(value = "products/{id}", method = RequestMethod.PUT)
-    public Product update(@PathVariable Long id, @RequestBody Product product) {
-        return ProductStub.update(id, product);
+    @RequestMapping(value = "products/{productId}", method = RequestMethod.PUT)
+    public Product update(@PathVariable Long productId, @RequestBody Product product) {
+        return ProductStub.update(productId, product);
     }
 
-    @RequestMapping(value = "products/{id}", method = RequestMethod.DELETE)
-    public Product delete(@PathVariable Long id) {
-        return ProductStub.delete(id);
+    @RequestMapping(value = "products/{productId}", method = RequestMethod.DELETE)
+    public Product delete(@PathVariable Long productId) {
+        return ProductStub.delete(productId);
     }
 
 

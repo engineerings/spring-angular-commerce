@@ -1,12 +1,13 @@
 var gulp = require('gulp');
 var args = require('yargs').argv;
 var config = require('./gulp.config')();
+var del = require('del');
 
 var $ = require('gulp-load-plugins')({lazy: true});
 
 gulp.task('check', function () {
 
-    log('Analizyng source with JSHint and JSCS');
+    log('Analyzing source with JSHint and JSCS');
 
     return gulp
         .src(config.alljs)

@@ -10,6 +10,8 @@
 
     <title>Angular - Spring</title>
 
+    <!-- angularJS library styles -->
+    <link href="assets/lib/angular/css/angular-csp.css" rel="stylesheet" />
     <!-- Bootstrap core style sheets -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap theme style sheets -->
@@ -21,44 +23,8 @@
 
     <!-- Custom style sheets -->
     <link href="assets/css/styles.css" rel="stylesheet" />
-    <link href="assets/css/productsTable.css" rel="stylesheet" />
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/lib/html5shiv/html5shiv.min.js"></script>
-    <script src="assets/lib/respond/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- requireJS -->
-    <script src="assets/lib/require/require.js"></script>
-
-    <!-- angularJS library Scripts -->
-    <link href="assets/lib/angular/css/angular-csp.css" rel="stylesheet" />
-    <script src="assets/lib/angular/js/angular.js"></script>
-    <script src="assets/lib/angular/js/angular-animate.js"></script>
-    <script src="assets/lib/angular/js/angular-ui-router.js"></script>
-    <script src="assets/lib/angular/js/angular-ui-bootstrap-tpls.js"></script>
-    <script src="assets/lib/angular/js/angular-resource.js"></script>
-    <script src="assets/lib/angular/js/angular-mocks.js"></script>
-
-    <!-- Application Script -->
-    <script src="app/app.js"></script>
-
-    <!-- Application Modules -->
-    <script src="app/products/product.module.js"></script>
-
-    <!-- Services -->
-    <script src="common/services/common.services.js"></script>
-    <script src="common/services/productResource.js"></script>
-    <script src="common/services/productResourceMock.js"></script>
-
-    <!-- Product Controllers -->
-    <script src="app/products/productListCtrl.js"></script>
 
 </head>
-<body>
-
-
 
 <!-- NAVBAR
 ================================================== -->
@@ -81,30 +47,58 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a ui-sref="home">Home</a></li>
-                        <li><a ui-sref="productList">Product List</a></li>
+                        <li><a ui-sref="productList">Products</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
     </div>
-</div>
-
 
     <div class="">
         <div ui-view></div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</div>
 
 
 
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="assets/lib/html5shiv/html5shiv.min.js"></script>
+<script src="assets/lib/respond/respond.min.js"></script>
+<![endif]-->
 
-<!-- FOOTER -->
-<footer class="container">
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+<!-- requireJS -->
+<script src="assets/lib/require/require.js"></script>
 
+<!-- angularJS library Scripts -->
+<script src="assets/lib/angular/js/angular.js"></script>
+<script src="assets/lib/angular/js/angular-animate.js"></script>
+<script src="assets/lib/angular/js/angular-ui-router.js"></script>
+<script src="assets/lib/angular/js/angular-ui-bootstrap-tpls.js"></script>
+<script src="assets/lib/angular/js/angular-resource.js"></script>
+<script src="assets/lib/angular/js/angular-mocks.js"></script>
+
+<!-- Application Script -->
+<script src="app/app.js"></script>
+
+<!-- Application Modules -->
+<script src="app/products/product.module.js"></script>
+
+<!-- Services -->
+<script src="common/services/common.services.js"></script>
+<script src="common/services/productResource.js"></script>
+<script src="common/services/productResourceMock.js"></script>
+
+<!-- Product Controllers -->
+<script src="app/products/productListCtrl.js"></script>
+<script src="app/products/ProductDetailCtrl.js"></script>
 
 <!-- Bootstrap & JavaScript -->
 <script src="assets/lib/jquery/jquery.min.js"></script>

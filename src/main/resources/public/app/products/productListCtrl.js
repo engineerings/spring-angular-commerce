@@ -11,9 +11,18 @@ angular.
 function ProductListCtrl(productResource) {
     var vm = this;
 
+    vm.imgFolder = '/assets/img/';
+
     productResource.query(function (data) {
         vm.products = data;
+
     });
+
+    vm.showImage = false;
+
+    vm.toggleImage = function () {
+        vm.showImage = !vm.showImage;
+    }
 
 }
 

@@ -10,6 +10,8 @@
 
     <title>Angular - Spring</title>
 
+    <!-- angularJS library styles -->
+    <link href="assets/lib/angular/css/angular-csp.css" rel="stylesheet" />
     <!-- Bootstrap core style sheets -->
     <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap theme style sheets -->
@@ -22,34 +24,7 @@
     <!-- Custom style sheets -->
     <link href="assets/css/styles.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="assets/lib/html5shiv/html5shiv.min.js"></script>
-    <script src="assets/lib/respond/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- requireJS -->
-    <script src="assets/lib/require/require.js"></script>
-
-    <!-- angularJS library Scripts -->
-    <link href="assets/lib/angular/css/angular-csp.css" rel="stylesheet" />
-    <script src="assets/lib/angular/js/angular.js"></script>
-    <script src="assets/lib/angular/js/angular-animate.js"></script>
-    <script src="assets/lib/angular/js/angular-resource.js"></script>
-    <script src="assets/lib/angular/js/angular-ui-router.js"></script>
-    <script src="assets/lib/angular/js/angular-ui-bootstrap-tpls.js"></script>
-
-    <!-- Application Script -->
-    <script src="app/app.js"></script>
-
-    <!-- Services -->
-    <!-- Product Controllers -->
-
-
 </head>
-<body>
-
-
 
 <!-- NAVBAR
 ================================================== -->
@@ -66,48 +41,64 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Project name</a>
+                    <a class="navbar-brand"
+                       ui-sref="home">Ecommerce - Spring Angular</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
+                        <li class="active"><a ui-sref="home">Home</a></li>
+                        <li><a ui-sref="productList">Products</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
     </div>
-</div>
-
 
     <div class="">
         <div ui-view></div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+</div>
 
 
 
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="assets/lib/html5shiv/html5shiv.min.js"></script>
+<script src="assets/lib/respond/respond.min.js"></script>
+<![endif]-->
 
-<!-- FOOTER -->
-<footer class="container">
-    <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+<!-- requireJS -->
+<script src="assets/lib/require/require.js"></script>
 
+<!-- angularJS library Scripts -->
+<script src="assets/lib/angular/js/angular.js"></script>
+<script src="assets/lib/angular/js/angular-animate.js"></script>
+<script src="assets/lib/angular/js/angular-ui-router.js"></script>
+<script src="assets/lib/angular/js/angular-ui-bootstrap-tpls.js"></script>
+<script src="assets/lib/angular/js/angular-resource.js"></script>
+<script src="assets/lib/angular/js/angular-mocks.js"></script>
+
+<!-- Application Script -->
+<script src="app/app.js"></script>
+
+<!-- Application Modules -->
+<script src="app/products/product.module.js"></script>
+
+<!-- Services -->
+<script src="common/services/common.services.js"></script>
+<script src="common/services/productResource.js"></script>
+<script src="common/services/productResourceMock.js"></script>
+
+<!-- Product Controllers -->
+<script src="app/products/productListCtrl.js"></script>
+<script src="app/products/ProductDetailCtrl.js"></script>
 
 <!-- Bootstrap & JavaScript -->
 <script src="assets/lib/jquery/jquery.min.js"></script>

@@ -1,25 +1,25 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     angular
         .module('productManagement')
-        .controller('productDetailCtrl',
-                 ['product',
-                   ProductDetailCtrl]);
-
+        .controller('ProductDetailCtrl',
+            ['product',
+                ProductDetailCtrl]);
 
     function ProductDetailCtrl(product) {
         var vm = this;
 
+        vm.imgFolder = '/assets/img/';
+
         vm.product = product;
 
-        console.log("------------------------------------------------------");
-        console.log(product);
+        vm.title = 'Product Detail: ' + vm.product.name;
 
-        vm.title = "Product Detail: " + vm.product.name;
+        console.log(vm.product);
+
     }
 
 }());
-
 
