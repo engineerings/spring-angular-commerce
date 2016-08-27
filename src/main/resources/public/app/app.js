@@ -5,8 +5,8 @@
     var app = angular.module('commerceApp',
             ['ui.router',
              'common.services',
-             'productManagement',
-             'productResourceMock']);
+             'productManagement'
+             /*'productResourceMock'*/]);
 
     app.config(function ($provide) {
         $provide.decorator('$exceptionHandler',
@@ -38,6 +38,24 @@
                     templateUrl: 'app/products/productListView.html',
                     controller: 'ProductListCtrl as vm'
 
+                })
+                .state('productCreate', {
+                    url: '/products/create',
+                    templateUrl: 'app/products/productCreateView.html',
+                    controller: 'ProductCreateCtrl as vm'
+                })
+                .state('productEdit', {
+                    url: '/products/edit/:productId',
+                    templateUrl: 'app/products/productEditView.html',
+                    controller: 'productEditCtrl as vm',
+                    resolve: {
+                        productResource: 'productResource',
+
+                        product: function (productResource, $stateParams) {
+                            var productId = $stateParams.productId;
+                            return productResource.get({id: productId}).$promise;
+                        }
+                    }
                 })
                 .state('productDetail', {
                     url: '/products/:productId',

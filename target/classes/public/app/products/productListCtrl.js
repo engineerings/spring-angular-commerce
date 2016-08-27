@@ -16,10 +16,7 @@ function ProductListCtrl(productResource) {
     productResource.query(function (data) {
         vm.products = data;
 
-        console.log(vm.products);
     });
-
-
 
     vm.showImage = false;
 

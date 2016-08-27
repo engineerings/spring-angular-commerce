@@ -17,8 +17,6 @@
 
         vm.title = 'Product Detail: ' + vm.product.name;
 
-        console.log(vm.product);
-
     }
 
 }());

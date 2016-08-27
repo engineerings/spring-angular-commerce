@@ -2,6 +2,9 @@ package com.mike.ecommerce.controller;
 
 
 import com.mike.ecommerce.model.Product;
+import com.mike.ecommerce.repository.ProductJpaRepository;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,29 +13,40 @@ import java.util.List;
 @RequestMapping("api/v1/")
 public class ProductController {
 
+    @Autowired
+    ProductJpaRepository productJpaRepository;
+
     @RequestMapping(value = "products", method = RequestMethod.GET)
     public List<Product> list() {
-        return ProductStub.list();
+
+        return productJpaRepository.findAll();
     }
 
     @RequestMapping(value = "products", method = RequestMethod.POST)
     public Product create(@RequestBody Product product) {
-        return ProductStub.create(product);
+        return productJpaRepository.saveAndFlush(product);
     }
 
     @RequestMapping(value = "products/{productId}", method = RequestMethod.GET)
     public Product get(@PathVariable Long productId) {
-        return ProductStub.get(productId);
+
+        return productJpaRepository.findOne(productId);
     }
 
     @RequestMapping(value = "products/{productId}", method = RequestMethod.PUT)
     public Product update(@PathVariable Long productId, @RequestBody Product product) {
-        return ProductStub.update(productId, product);
+
+        Product existingProduct = productJpaRepository.findOne(productId);
+        BeanUtils.copyProperties(product, existingProduct);
+        return productJpaRepository.saveAndFlush(existingProduct);
     }
 
     @RequestMapping(value = "products/{productId}", method = RequestMethod.DELETE)
     public Product delete(@PathVariable Long productId) {
-        return ProductStub.delete(productId);
+
+        Product existingProduct = productJpaRepository.findOne(productId);
+        productJpaRepository.delete(existingProduct);
+        return existingProduct;
     }
 
 

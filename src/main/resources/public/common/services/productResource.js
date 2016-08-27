@@ -8,8 +8,11 @@
                 productResource]);
 
     function productResource($resource) {
-        return $resource("/api/v1/products/:id");
+        return $resource("/api/v1/products/:id", { id: '@id'}, {
+            update: 'PUT'
+        });
 
     }
 
 }());
+
