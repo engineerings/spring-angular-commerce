@@ -1,6 +1,8 @@
 package com.mike.ecommerce.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,7 @@ public class Product {
     private String name;
     private String description;
     private Double price;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
     private Integer category;
     private Double weight;

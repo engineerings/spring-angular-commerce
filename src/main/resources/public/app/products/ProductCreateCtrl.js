@@ -7,16 +7,16 @@
         .controller('ProductCreateCtrl',
             ['productResource',
              '$state',
-              '$stateParams',
-                ProductCreateCtrl]);
+             '$scope',
+             ProductCreateCtrl]);
 
-    function ProductCreateCtrl($state, $stateParams, productResource) {
+    function ProductCreateCtrl(productResource, $state, $scope) {
         var vm = this;
 
-        vm.product = productResource;
+        vm.product = new productResource();
 
-        vm.addProduct = function () {
-            vm.productResource.$save(function () {
+        $scope.addProduct = function () {
+            vm.product.$save(function () {
                 $state.go('productList');
             })
         };

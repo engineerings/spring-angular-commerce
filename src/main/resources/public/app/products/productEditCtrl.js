@@ -9,24 +9,21 @@
             ['product',
                 '$state',
                 '$filter',
+                '$scope',
                 'productResource',
                 productEditCtrl]);
 
-    function productEditCtrl(product, $state, $filter, productResource) {
+    function productEditCtrl(product, $state, $filter, $scope) {
         var vm = this;
 
         vm.product = product;
 
         vm.product.date = $filter('date')(vm.product.date, "dd/MM/yyyy");
 
-
-        console.log(vm.product);
-
-
-        vm.updateProduct = function (productResource) {
-            vm.productResource.$update(function () {
+        $scope.updateProduct = function () {
+            vm.product.$save(function () {
                 $state.go('productList');
-            })
+            });
         };
 
     }
